@@ -4,7 +4,7 @@
 print('We will ask you for three inputs.')
 path = input("Copy/ paste file path: ")
 file_name = input("What would you like the file called? ")
-destination = input('Where would you like the file to go? ')
+destination = input("Where would you like the file to go? ")
 
 # input validation
 while path == None:
@@ -16,19 +16,8 @@ while destination == None:
 while file_name == None:
     file_name = input("File name missing value, please input what you would like the processed file to be called: ")
 
-path = str(path)
-destination = str(destination)
-file_name = str(file_name)
 
-# path and filename formatting
-
-destination = destination.strip()
-
-path = path.strip()
-
-file_name = file_name.strip()
-
-if destination[len(destination)] != "/":
+if not destination.endswith("/"):
     destination = destination + "/"
 
 # must specifically be .xlsx at end to work with ExcelWriter
@@ -71,7 +60,7 @@ except:
 
 name = (f'{destination}' + '/' +f'{file_name}')
 
-writer = pd.ExcelWriter(f'{name}' + '.xlsx', engine = 'xlsxwriter')
+writer = pd.ExcelWriter(f'{name}', engine = 'xlsxwriter')
 
 df.to_excel(writer)
 

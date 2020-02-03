@@ -11,17 +11,6 @@ if destination == None:
 if file_name == None:
     file_name = input("File name missing value, please input what you would like the processed file to be called: ")
 
-# path and filename formatting
-
-destination = destination.strip()
-
-path = path.strip()
-
-file_name = file_name.strip()
-
-if destination[len(destination)] != "/":
-    destination = destination + "/"
-
 
 # must specifically be .xlsx at end to work with ExcelWriter
 if ".xls" in file_name:
