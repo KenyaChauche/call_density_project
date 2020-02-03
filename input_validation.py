@@ -1,5 +1,6 @@
 # Kenya
 
+# input validation
 if path == None:
     path = input("File path missing value, please copy/paste the file path for the document to process: ")
 
@@ -10,11 +11,24 @@ if destination == None:
 if file_name == None:
     file_name = input("File name missing value, please input what you would like the processed file to be called: ")
 
+# path and filename formatting
+
+while destination[len(destination)] == " ":
+    del destination[len(destination)]
+
+while path[len(path)] == " ":
+    del path[len(path)]
+
+while file_name[len(file_name)] == " ":
+    del file_name[len(file_name)]
+
 if destination[len(destination)] != "/":
     destination = destination + "/"
 
 if ".xls" not in file_name:
     file_name = file_name + ".xls"
+
+# file read in and read out validation
 
 try:
     df = pd.read_excel(f"{path}", header = header_index)
