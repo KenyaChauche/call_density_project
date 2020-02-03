@@ -34,9 +34,14 @@ while file_name[len(file_name)] == " ":
 if destination[len(destination)] != "/":
     destination = destination + "/"
 
-if ".xls" not in file_name:
-    file_name = file_name + ".xls"
+# must specifically be .xlsx at end to work with ExcelWriter
+if ".xls" in file_name:
+    file_name.remove(".xls")
 
+if ".xlsx" not in file_name:
+    file_name = file_name + ".xlsx"
+
+    
 # process excel spreadsheet
 import pandas as pd
 
