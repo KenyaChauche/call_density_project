@@ -13,19 +13,16 @@ if file_name == None:
 
 # path and filename formatting
 
-while destination[len(destination)] == " ":
-    del destination[len(destination)]
+destination = destination.strip()
 
-while path[len(path)] == " ":
-    del path[len(path)]
+path = path.strip()
 
-while file_name[len(file_name)] == " ":
-    del file_name[len(file_name)]
+file_name = file_name.strip()
 
 if destination[len(destination)] != "/":
     destination = destination + "/"
 
-    
+
 # must specifically be .xlsx at end to work with ExcelWriter
 if ".xls" in file_name:
     file_name.remove(".xls")

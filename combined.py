@@ -22,14 +22,11 @@ file_name = str(file_name)
 
 # path and filename formatting
 
-while destination[len(destination)] == " ":
-    del destination[len(destination)]
+destination = destination.strip()
 
-while path[len(path)] == " ":
-    del path[len(path)]
+path = path.strip()
 
-while file_name[len(file_name)] == " ":
-    del file_name[len(file_name)]
+file_name = file_name.strip()
 
 if destination[len(destination)] != "/":
     destination = destination + "/"
@@ -40,7 +37,7 @@ if ".xls" in file_name:
 
 if ".xlsx" not in file_name:
     file_name = file_name + ".xlsx"
-    
+
 # process excel spreadsheet
 import pandas as pd
 
