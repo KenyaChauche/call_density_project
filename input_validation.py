@@ -25,6 +25,7 @@ while file_name[len(file_name)] == " ":
 if destination[len(destination)] != "/":
     destination = destination + "/"
 
+    
 # must specifically be .xlsx at end to work with ExcelWriter
 if ".xls" in file_name:
     file_name.remove(".xls")

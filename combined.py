@@ -40,7 +40,6 @@ if ".xls" in file_name:
 
 if ".xlsx" not in file_name:
     file_name = file_name + ".xlsx"
-
     
 # process excel spreadsheet
 import pandas as pd
