@@ -71,4 +71,11 @@ except:
     file_name = input("File name: ")
     destination = input("Path to folder: ")
 
-df.to_excel(f"{destination + file_name}")
+
+name = (f'{destination}' + '/' +f'{file_name}')
+
+writer = pd.ExcelWriter(f'{name}' + '.xlsx', engine = 'xlsxwriter')
+
+df.to_excel(writer)
+
+writer.save()
