@@ -20,6 +20,23 @@ path = str(path)
 destination = str(destination)
 file_name = str(file_name)
 
+# path and filename formatting
+
+while destination[len(destination)] == " ":
+    del destination[len(destination)]
+
+while path[len(path)] == " ":
+    del path[len(path)]
+
+while file_name[len(file_name)] == " ":
+    del file_name[len(file_name)]
+
+if destination[len(destination)] != "/":
+    destination = destination + "/"
+
+if ".xls" not in file_name:
+    file_name = file_name + ".xls"
+
 # process excel spreadsheet
 import pandas as pd
 
@@ -43,12 +60,6 @@ df['overlap'] = df.index.map(overlap)
 df['num_overlaps'] = df.overlap.map(len)
 
 # output validation
-if destination[len(destination)] != "/":
-    destination = destination + "/"
-
-if ".xls" not in file_name:
-    file_name = file_name + ".xls"
-
 try:
     df.to_excel(f"{destination + file_name}")
 except:
