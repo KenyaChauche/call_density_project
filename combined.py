@@ -18,6 +18,7 @@ while file_name == None:
 
 path = path.rstrip()
 
+
 if not destination.endswith("/"):
     destination = destination + "/"
 

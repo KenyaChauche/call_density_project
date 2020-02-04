@@ -13,6 +13,7 @@ if file_name == None:
 
 path = path.rstrip()
 
+
 # must specifically be .xlsx at end to work with ExcelWriter
 if ".xls" in file_name:
     file_name.remove(".xls")
