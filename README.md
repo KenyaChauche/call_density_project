@@ -13,4 +13,5 @@ The user is starting with an excel spreadsheet of the previous month's call data
 
 
 ## Credits
-This project was produced by Kenya Chauche, Chris Corliss, Patrick Hubbel, Richard Samuelson, and Stephen Schott with supervision by Charles Rice. Project originally hosted on General Assembly GitHub Enterprise accounts, posted publicly with permission. 
+This project was produced by Kenya Chauche, Chris Corliss, Patrick Hubbell, Richard Samuelson, and Stephen Schott with supervision by Charles Rice. Project originally hosted on General Assembly GitHub Enterprise accounts, posted publicly with permission. 
+
