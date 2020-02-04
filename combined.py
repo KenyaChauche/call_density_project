@@ -4,7 +4,7 @@
 print('We will ask you for three inputs.')
 path = input("Copy/ paste file path: ")
 file_name = input("What would you like the file called? ")
-destination = input('Where would you like the file to go? ')
+destination = input("Where would you like the file to go? ")
 
 # input validation
 while path == None:
@@ -16,26 +16,16 @@ while destination == None:
 while file_name == None:
     file_name = input("File name missing value, please input what you would like the processed file to be called: ")
 
-path = str(path)
-destination = str(destination)
-file_name = str(file_name)
 
-# path and filename formatting
-
-while destination[len(destination)] == " ":
-    del destination[len(destination)]
-
-while path[len(path)] == " ":
-    del path[len(path)]
-
-while file_name[len(file_name)] == " ":
-    del file_name[len(file_name)]
-
-if destination[len(destination)] != "/":
+if not destination.endswith("/"):
     destination = destination + "/"
 
-if ".xls" not in file_name:
-    file_name = file_name + ".xls"
+# must specifically be .xlsx at end to work with ExcelWriter
+if ".xls" in file_name:
+    file_name.remove(".xls")
+
+if ".xlsx" not in file_name:
+    file_name = file_name + ".xlsx"
 
 # process excel spreadsheet
 import pandas as pd
@@ -70,7 +60,7 @@ except:
 
 name = (f'{destination}' + '/' +f'{file_name}')
 
-writer = pd.ExcelWriter(f'{name}' + '.xlsx', engine = 'xlsxwriter')
+writer = pd.ExcelWriter(f'{name}', engine = 'xlsxwriter')
 
 df.to_excel(writer)
 

@@ -11,22 +11,15 @@ if destination == None:
 if file_name == None:
     file_name = input("File name missing value, please input what you would like the processed file to be called: ")
 
-# path and filename formatting
 
-while destination[len(destination)] == " ":
-    del destination[len(destination)]
+# must specifically be .xlsx at end to work with ExcelWriter
+if ".xls" in file_name:
+    file_name.remove(".xls")
 
-while path[len(path)] == " ":
-    del path[len(path)]
+if ".xlsx" not in file_name:
+    file_name = file_name + ".xlsx"
 
-while file_name[len(file_name)] == " ":
-    del file_name[len(file_name)]
 
-if destination[len(destination)] != "/":
-    destination = destination + "/"
-
-if ".xls" not in file_name:
-    file_name = file_name + ".xls"
 
 # file read in and read out validation
 
