@@ -16,7 +16,7 @@ while destination == None:
 while file_name == None:
     file_name = input("File name missing value, please input what you would like the processed file to be called: ")
 
-path = path.rstrip()
+# path = path.rstrip()
 
 
 if not destination.endswith("/"):
