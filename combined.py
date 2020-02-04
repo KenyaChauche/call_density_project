@@ -35,7 +35,7 @@ import pandas as pd
 header_index = 2
 
 try:
-    df = pd.read_excel(f"{path}", header = header_index)
+    df = pd.read_excel(path, header = header_index)
 except:
     path = input("Error with file path, please double check path and copy/paste file path for document to process: ")
 
