@@ -16,14 +16,21 @@ while destination == None:
 while file_name == None:
     file_name = input("File name missing value, please input what you would like the processed file to be called: ")
 
-# path = path.rstrip()
+
+path = path.replace('\ ', ' ')
+
+path = path.rstrip()
+
+destination = destination.rstrip()
+
+file_name = file_name.rstrip()
 
 
 if not destination.endswith("/"):
     destination = destination + "/"
 
 # must specifically be .xlsx at end to work with ExcelWriter
-if ".xls" in file_name:
+if file_name.endswith(".xls"):
     file_name.remove(".xls")
 
 if ".xlsx" not in file_name:
@@ -35,9 +42,11 @@ import pandas as pd
 header_index = 2
 
 try:
-    df = pd.read_excel(path, header = header_index)
+    df = pd.read_excel(f"{path}", header = header_index)
 except:
     path = input("Error with file path, please double check path and copy/paste file path for document to process: ")
+
+path = path.rstrip()
 
 df = pd.read_excel(path, header = header_index)
 
@@ -60,7 +69,7 @@ except:
     destination = input("Path to folder: ")
 
 
-name = (f'{destination}' + '/' +f'{file_name}')
+name = (f'{destination + file_name}')
 
 writer = pd.ExcelWriter(f'{name}', engine = 'xlsxwriter')
 
