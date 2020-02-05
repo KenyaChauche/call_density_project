@@ -1,4 +1,3 @@
-# Chris and Richard
 
 import pandas as pd
 header_index = 2

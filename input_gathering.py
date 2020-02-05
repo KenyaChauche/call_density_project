@@ -1,4 +1,3 @@
-# Patrick
 import pandas as pd
 
 print('We will ask you for three inputs.')

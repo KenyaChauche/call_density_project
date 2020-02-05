@@ -1,4 +1,3 @@
-# Kenya
 
 # input validation
 if path == None:
