@@ -14,3 +14,5 @@ The user will use the command line to utilize the program.  The user will be ask
 
 ## Credits
 This project was produced by Kenya Chauche, Chris Corliss, Patrick Hubbell, Richard Samuelson, and Stephen Schott with supervision by Charles Rice. Project originally hosted on General Assembly GitHub Enterprise accounts, posted publicly with permission.
+
+This project is maintained and updated for specific needs of the Camano Island Fire Department by Kenya Chauche. 
